@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rollstead — AI-Powered Commercial Property Tax Intelligence</title>
+    <meta name="description" content="Rollstead helps commercial property owners reduce tax risk with AI-powered valuation intelligence, appeal insights, and automated tax risk reporting.">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0A1A2F;
+            color: #FFFFFF;
+        }
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #0A1A2F;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #F2C94C;
+        }
+        header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cta-button {
+            margin-top: 25px;
+            padding: 14px 28px;
+            background-color: #F2C94C;
+            color: #0A1A2F;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            color: #F2C94C;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .service-box {
+            background-color: #11233F;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #081423;
+            color: #CCCCCC;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Rollstead</h1>
+    <p>AI-powered commercial property tax intelligence and appeal insights for owners, operators, and advisors.</p>
+    <a class="cta-button" href="#contact">Get Your Tax Risk Report</a>
+</header>
+
+<section class="section">
+    <h2>What Rollstead Does</h2>
+    <p>Rollstead analyzes commercial properties using AI-driven valuation models, tax roll intelligence, and appeal outcome data to identify overassessment risk and generate actionable tax appeal strategies.</p>
+
+    <div class="services-grid">
+        <div class="service-box">
+            <h3>AI Valuation Engine</h3>
+            <p>Automated valuation modeling using market comps, income data, and historical tax roll trends.</p>
+        </div>
+        <div class="service-box">
+            <h3>Tax Risk Scoring</h3>
+            <p>Instant overassessment detection with proprietary Rollstead Tax Risk Scores.</p>
+        </div>
+        <div class="service-box">
+            <h3>Appeal Intelligence</h3>
+            <p>Appeal likelihood predictions based on historical outcomes and assessor behavior patterns.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Testimonials</h2>
+    <p>“Rollstead identified a 17% overassessment on our industrial portfolio. The appeal strategy was spot-on.” — CRE Operator</p>
+    <p>“The Tax Risk Report helped us prioritize which properties to appeal first. Huge time saver.” — Asset Manager</p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Request a Tax Risk Report</h2>
+    <p>Submit your property details and receive a full AI-powered tax risk analysis.</p>
+    <p><strong>Insert your Microsoft Form link here</strong></p>
+</section>
+
+<section class="section">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+        <strong>How does Rollstead work?</strong>
+        <p>We combine valuation models, tax roll data, and appeal history to detect overassessment risk.</p>
+    </div>
+    <div class="faq-item">
+        <strong>Who is Rollstead for?</strong>
+        <p>Commercial property owners, operators, brokers, and tax consultants.</p>
+    </div>
+    <div class="faq-item">
+        <strong>How long does a Tax Risk Report take?</strong>
+        <p>Most reports are generated within 24 hours.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Rollstead LLC — Minneapolis, MN</p>
+</footer>
+
+</body>
+</html>
