@@ -1,88 +1,255 @@
-<header style="padding: 60px 20px; text-align: center; background-color: #04125E; color: #ffffff;">
-    <h1 style="font-size: 42px; margin-bottom: 20px; font-weight: bold;">
-        Is Your Commercial Property Overassessed?
-    </h1>
-    <p style="font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; line-height: 1.5;">
-        We compare your property to the city's own numbers. If you're paying too much, we fight to lower your taxes. 
-        You pay nothing unless you save.
-    </p>
-    <a href="#assessment-form" 
-       style="background-color: #F2C94C; color: #04125E; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 8px; text-decoration: none;">
-       Get My Free Assessment Check
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rollstead — Commercial Property Assessment Check</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #04125E;
+        color: #ffffff;
+    }
+
+    /* HERO */
+    header {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(180deg, #04125E 0%, #071A7A 100%);
+    }
+
+    header img {
+        width: 160px;
+        margin-bottom: 25px;
+    }
+
+    header h1 {
+        font-size: 44px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    header p {
+        font-size: 20px;
+        max-width: 700px;
+        margin: 0 auto 35px auto;
+        line-height: 1.6;
+    }
+
+    .cta-button {
+        background-color: #F2C94C;
+        color: #04125E;
+        padding: 16px 32px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    /* SECTION WRAPPER */
+    section {
+        padding: 70px 20px;
+        background-color: #ffffff;
+        color: #04125E;
+    }
+
+    section.alt {
+        background-color: #f7f9fc;
+    }
+
+    section h2 {
+        text-align: center;
+        font-size: 34px;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+
+    .content {
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: 19px;
+        line-height: 1.7;
+    }
+
+    /* HOW IT WORKS CARDS */
+    .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .step-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 25px;
+        border-left: 6px solid #F2C94C;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .step-card strong {
+        font-size: 20px;
+    }
+
+    /* FORM SECTION */
+    #assessment-form {
+        background-color: #04125E;
+        color: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    #assessment-form h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    #assessment-form p {
+        font-size: 20px;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    input, textarea {
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+    button {
+        background-color: #F2C94C;
+        color: #04125E;
+        padding: 16px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    footer {
+        background-color: #020B3A;
+        color: #ffffff;
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 17px;
+    }
+
+    footer a {
+        color: #F2C94C;
+        text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <!-- Add your logo file name here -->
+    <img src="logo.png" alt="Rollstead Logo">
+
+    <h1>Is your commercial property overassessed? Find out free.</h1>
+    <p>We compare your property to the city's own numbers. If you're paying too much, we fight to lower your taxes. You pay nothing unless you save.</p>
+    <a href="#assessment-form" class="cta-button">Get My Free Assessment Check</a>
 </header>
 
-<section style="padding: 60px 20px; background-color: #ffffff; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">The Problem</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
+<section>
+    <h2>The Problem</h2>
+    <div class="content">
         <p>Most owners never check their assessment. They just pay the bill.</p>
-        <p>But assessments are estimates — and estimates can be wrong. If yours is too high, you overpay every year until someone challenges it.</p>
+        <p>But assessments are estimates, and estimates can be wrong. If yours is too high, you overpay every year until someone challenges it.</p>
     </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #f7f9fc; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
-        <p><strong>1. Send us your address.</strong><br>
-        That's all we need to start. No research, no paperwork.</p>
+<section class="alt">
+    <h2>How It Works</h2>
+    <div class="content steps">
 
-        <p><strong>2. We run your Assessment Check.</strong><br>
-        We compare your property's value per square foot against similar properties using the county’s own public data. 
-        Within a few days, you'll know whether you have a case.</p>
+        <div class="step-card">
+            <p><strong>1. Send us your address.</strong><br>
+            That's all we need to start. You don't need to do any research or fill out any paperwork.</p>
+        </div>
 
-        <p><strong>3. If you have a case, we file the appeal.</strong><br>
-        We build the evidence and handle the filing. You sign one authorization — that’s it.</p>
+        <div class="step-card">
+            <p><strong>2. We run your Assessment Check.</strong><br>
+            We compare your property's value per square foot against similar properties using the county's own public data. Within a few days you'll know whether you have a case.</p>
+        </div>
+
+        <div class="step-card">
+            <p><strong>3. If you have a case, we file the appeal.</strong><br>
+            We build the evidence and handle the filing. You sign one authorization, and that's the only thing we ask of you.</p>
+        </div>
+
     </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #ffffff; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">No Savings, No Fee</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
-        <p>You don't pay anything upfront. Our fee is <strong>[X]%</strong> of the tax savings we get you. 
-        If we don't lower your taxes, you owe nothing.</p>
+<section>
+    <h2>No Savings, No Fee</h2>
+    <div class="content">
+        <p>You don't pay anything upfront. Our fee is <strong>[X]%</strong> of the tax savings we get you. If we don't lower your taxes, you owe nothing.</p>
     </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #f7f9fc; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Own More Than One Property?</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
-        <p>Get the <strong>Portfolio Ranking</strong> for free. Send us your list and we'll rank every property from most to least likely to be overassessed — so you know where to focus.</p>
+<section class="alt">
+    <h2>Own More Than One Property?</h2>
+    <div class="content">
+        <p>Get the <strong>Portfolio Ranking</strong> for free. Send us your list and we'll rank every property from most to least likely to be overassessed, so you know where to focus.</p>
     </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #ffffff; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Why It Matters</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
-        <p>A lower assessment keeps saving you money every year — not just this year.</p>
+<section>
+    <h2>Why It Matters</h2>
+    <div class="content">
+        <p>A lower assessment keeps saving you money every year, not just this year.</p>
     </div>
 </section>
 
-<section style="padding: 60px 20px; background-color: #f7f9fc; color: #04125E;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">The Deadline Is Real</h2>
-    <div style="max-width: 900px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
-        <p>In Minnesota, you have until <strong>April 30</strong> to challenge the assessment for taxes payable that year. 
-        If you miss it, you wait another year — and keep overpaying in the meantime.</p>
+<section class="alt">
+    <h2>The Deadline Is Real</h2>
+    <div class="content">
+        <p>In Minnesota, you have until <strong>April 30</strong> to challenge the assessment for taxes payable that year. If you miss it, you wait another year and keep overpaying in the meantime.</p>
     </div>
 </section>
 
-<section id="assessment-form" style="padding: 60px 20px; background-color: #04125E; color: #ffffff;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Find Out If You're Overpaying</h2>
-    <p style="text-align: center; font-size: 20px; max-width: 700px; margin: 0 auto 30px auto;">
-        It's free and there's no obligation. You'll get results in a few days.
-    </p>
+<section id="assessment-form">
+    <h2>Find out in a few days whether you're overpaying.</h2>
+    <p>It's free and there's no obligation.</p>
 
-    <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-        <input type="text" placeholder="Name" style="padding: 12px; border-radius: 6px; border: none;">
-        <input type="email" placeholder="Email" style="padding: 12px; border-radius: 6px; border: none;">
-        <input type="tel" placeholder="Phone" style="padding: 12px; border-radius: 6px; border: none;">
-        <textarea placeholder="Property address(es)" style="padding: 12px; border-radius: 6px; border: none; height: 120px;"></textarea>
-        <button type="submit" 
-                style="background-color: #F2C94C; color: #04125E; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer;">
-            Get My Free Assessment Check
-        </button>
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone">
+        <textarea placeholder="Property address(es)"></textarea>
+        <button type="submit">Get My Free Assessment Check</button>
     </form>
 
-    <p style="text-align: center; margin-top: 30px; font-size: 18px;">
+    <p style="margin-top: 30px;">
         Prefer to talk? Call <strong>612.296.8400</strong> · <strong>info@rollstead.ai</strong>
     </p>
 </section>
+
+<footer>
+    © 2026 Rollstead LLC — Minneapolis, MN
+</footer>
+
+</body>
+</html>
