@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Rollstead | Commercial Property Assessment Intelligence</title>
+
   <meta
     name="description"
-    content="Rollstead helps Minnesota commercial property owners identify potential overassessment using public property data and comparable-property analysis. Start with a free Assessment Check."
+    content="Rollstead helps Minnesota commercial property owners identify potential overassessment using public property data and comparable-property analysis."
   />
 
-  <meta name="theme-color" content="#0f2f3a" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Rollstead | Commercial Property Assessment Intelligence" />
-  <meta
-    property="og:description"
-    content="Find out whether your commercial property assessment deserves a second look."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.rollstead.ai/" />
+  <meta name="theme-color" content="#1E3A34" />
 
   <style>
     :root {
-      --ink: #12242b;
-      --muted: #5f6c71;
-      --brand: #0f3b46;
-      --brand-dark: #0a2c35;
-      --accent: #d5aa62;
-      --paper: #ffffff;
-      --soft: #f5f7f6;
-      --soft-2: #eef2f1;
-      --line: #dfe6e3;
-      --success: #1f6a50;
-      --danger: #8a3b36;
+      --green: #1E3A34;
+      --green-dark: #142B27;
+      --gold: #D9A94F;
+
+      --text: #18312C;
+      --muted: #5B6B66;
+
+      --white: #FFFFFF;
+      --cream: #F8F6F0;
+      --cream-dark: #F5F2EA;
+      --border: #E3E1D8;
 
       --container: 1160px;
-      --reading: 720px;
 
-      --r-sm: 8px;
-      --r-md: 14px;
-      --r-lg: 20px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
 
-      --s-1: 0.5rem;
-      --s-2: 0.75rem;
-      --s-3: 1rem;
-      --s-4: 1.5rem;
-      --s-5: 2rem;
-      --s-6: 3rem;
-      --s-7: 4.5rem;
-      --s-8: 6.5rem;
-
-      --shadow: 0 12px 34px rgba(18, 36, 43, 0.08);
+      --shadow: 0 12px 34px rgba(24, 49, 44, 0.08);
     }
 
     * {
@@ -64,8 +46,7 @@
 
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--paper);
+
       font-family:
         Inter,
         ui-sans-serif,
@@ -74,19 +55,23 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
+
+      color: var(--text);
+      background: var(--white);
+
       font-size: 17px;
       line-height: 1.62;
+
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
     }
 
     img {
       max-width: 100%;
       display: block;
-    }
-
-    a {
-      color: inherit;
     }
 
     button,
@@ -100,45 +85,42 @@
       margin-inline: auto;
     }
 
-    .reading-width {
-      max-width: var(--reading);
-    }
-
-    .eyebrow {
-      margin: 0 0 var(--s-3);
-      color: var(--brand);
-      font-size: 0.79rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
+    /* =========================
+       TYPOGRAPHY
+    ========================== */
 
     h1,
     h2,
     h3 {
       margin-top: 0;
-      color: var(--ink);
+
+      color: var(--text);
+
       line-height: 1.12;
       letter-spacing: -0.035em;
     }
 
     h1 {
-      max-width: 880px;
-      margin-bottom: var(--s-4);
-      font-size: clamp(2.65rem, 6vw, 5rem);
+      max-width: 860px;
+      margin-bottom: 24px;
+
+      font-size: clamp(2.7rem, 6vw, 5rem);
       font-weight: 780;
     }
 
     h2 {
-      margin-bottom: var(--s-4);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 22px;
+
+      font-size: clamp(2rem, 4vw, 3.1rem);
       font-weight: 750;
     }
 
     h3 {
-      margin-bottom: 0.65rem;
-      font-size: 1.18rem;
+      margin-bottom: 10px;
+
+      font-size: 1.17rem;
       font-weight: 750;
+
       letter-spacing: -0.02em;
     }
 
@@ -146,27 +128,48 @@
       margin-top: 0;
     }
 
-    .muted {
-      color: var(--muted);
+    .eyebrow {
+      margin: 0 0 16px;
+
+      color: var(--green);
+
+      font-size: 0.79rem;
+      font-weight: 800;
+
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
     }
 
     .large-copy {
       max-width: 760px;
+
       color: var(--muted);
-      font-size: clamp(1.1rem, 2vw, 1.28rem);
+
+      font-size: clamp(1.08rem, 2vw, 1.27rem);
       line-height: 1.65;
     }
 
-    /* Accessibility */
+    .muted {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ACCESSIBILITY
+    ========================== */
+
     .skip-link {
       position: absolute;
-      left: 12px;
       top: -60px;
+      left: 12px;
+
       z-index: 1000;
+
       padding: 10px 14px;
+
       color: white;
-      background: var(--brand);
-      border-radius: var(--r-sm);
+      background: var(--green);
+
+      border-radius: var(--radius-sm);
     }
 
     .skip-link:focus {
@@ -174,83 +177,98 @@
     }
 
     :focus-visible {
-      outline: 3px solid rgba(15, 59, 70, 0.30);
+      outline: 3px solid rgba(30, 58, 52, 0.28);
       outline-offset: 3px;
     }
 
-    /* Header */
+    /* =========================
+       HEADER
+    ========================== */
+
     .site-header {
       position: sticky;
       top: 0;
+
       z-index: 100;
-      border-bottom: 1px solid rgba(223, 230, 227, 0.92);
+
       background: rgba(255, 255, 255, 0.96);
+
+      border-bottom: 1px solid var(--border);
+
       backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 74px;
+      min-height: 76px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--s-4);
+
+      gap: 30px;
     }
 
     .brand {
       display: inline-flex;
-      align-items: baseline;
-      gap: 10px;
+      align-items: center;
+
       text-decoration: none;
     }
 
-    .brand-name {
-      color: var(--brand-dark);
-      font-size: 1.27rem;
-      font-weight: 850;
-      letter-spacing: 0.08em;
-    }
-
-    .brand-tag {
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 650;
+    .site-logo {
+      width: auto;
+      height: 44px;
+      max-width: 260px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
+
       gap: 28px;
     }
 
     .nav-link {
       color: var(--muted);
+
+      text-decoration: none;
+
       font-size: 0.92rem;
       font-weight: 650;
-      text-decoration: none;
     }
 
     .nav-link:hover {
-      color: var(--ink);
+      color: var(--text);
     }
 
-    /* Buttons */
+    /* =========================
+       BUTTONS
+    ========================== */
+
     .button {
       display: inline-flex;
+
       min-height: 48px;
+
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 12px 21px;
+
+      padding: 12px 22px;
+
       border: 1px solid transparent;
-      border-radius: var(--r-sm);
-      cursor: pointer;
+      border-radius: var(--radius-sm);
+
       text-decoration: none;
+
       font-size: 0.96rem;
       font-weight: 750;
+
+      cursor: pointer;
+
       transition:
-        transform 140ms ease,
-        background-color 140ms ease,
-        border-color 140ms ease;
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease;
     }
 
     .button:hover {
@@ -259,210 +277,283 @@
 
     .button-primary {
       color: white;
-      background: var(--brand);
+      background: var(--green);
     }
 
     .button-primary:hover {
-      background: var(--brand-dark);
+      background: var(--green-dark);
     }
 
     .button-secondary {
-      color: var(--ink);
+      color: var(--text);
+
       background: white;
-      border-color: var(--line);
+
+      border-color: var(--border);
     }
 
     .button-secondary:hover {
-      border-color: #bfcac6;
+      border-color: #BBC5C1;
     }
 
-    /* Hero */
+    /* =========================
+       HERO
+    ========================== */
+
     .hero {
-      padding: 108px 0 92px;
+      padding: 108px 0 94px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+
+      grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
+
       gap: 74px;
+
       align-items: end;
     }
 
     .hero-copy {
-      max-width: 790px;
+      max-width: 800px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+
       gap: 12px;
+
       margin-top: 30px;
     }
 
     .hero-note {
       margin: 20px 0 0;
+
       color: var(--muted);
+
       font-size: 0.9rem;
     }
 
     .proof-panel {
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      background: var(--soft);
+      position: relative;
+
+      padding: 30px;
+
+      background: var(--cream);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
     }
 
-    .proof-panel p:last-child {
-      margin-bottom: 0;
+    .proof-panel::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 30px;
+
+      width: 54px;
+      height: 3px;
+
+      background: var(--gold);
     }
 
     .proof-label {
       margin-bottom: 8px;
+
       color: var(--muted);
+
       font-size: 0.78rem;
       font-weight: 800;
+
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .proof-value {
       margin-bottom: 12px;
-      color: var(--ink);
+
       font-size: 1.5rem;
       font-weight: 760;
+
       line-height: 1.25;
       letter-spacing: -0.03em;
     }
 
-    /* Trust strip */
+    .proof-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       TRUST STRIP
+    ========================== */
+
     .trust-strip {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--soft);
+      background: var(--cream-dark);
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .trust-items {
       min-height: 76px;
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       align-items: center;
     }
 
     .trust-item {
       padding: 14px 24px;
+
       text-align: center;
+
       color: var(--muted);
+
       font-size: 0.91rem;
       font-weight: 700;
-      border-right: 1px solid var(--line);
-    }
 
-    .trust-item:first-child {
-      padding-left: 0;
+      border-right: 1px solid var(--border);
     }
 
     .trust-item:last-child {
-      padding-right: 0;
       border-right: 0;
     }
 
-    /* Generic sections */
-    section.section {
-      padding: var(--s-8) 0;
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    .section {
+      padding: 104px 0;
     }
 
     .section-soft {
-      background: var(--soft);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background: var(--cream);
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .section-heading {
       max-width: 760px;
+
       margin-bottom: 52px;
     }
 
-    .section-heading p:last-child {
-      margin-bottom: 0;
-    }
+    /* =========================
+       PROBLEM
+    ========================== */
 
-    /* Problem */
     .problem-grid {
       display: grid;
+
       grid-template-columns: 0.82fr 1.18fr;
+
       gap: 84px;
-      align-items: start;
     }
 
     .problem-copy {
       color: var(--muted);
+
       font-size: 1.08rem;
     }
 
     .principles {
-      display: grid;
-      gap: 0;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--border);
     }
 
     .principle {
       padding: 24px 0;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom: 1px solid var(--border);
     }
 
     .principle p {
       margin-bottom: 0;
+
       color: var(--muted);
     }
 
-    /* Process */
+    /* =========================
+       STEPS
+    ========================== */
+
     .steps {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 26px;
     }
 
     .step {
       padding-top: 22px;
-      border-top: 2px solid var(--line);
+
+      border-top: 2px solid var(--border);
+    }
+
+    .step:first-child {
+      border-top-color: var(--gold);
     }
 
     .step-number {
       margin-bottom: 12px;
-      color: var(--brand);
+
+      color: var(--green);
+
       font-size: 0.78rem;
       font-weight: 850;
+
       letter-spacing: 0.08em;
     }
 
     .step p {
       margin-bottom: 0;
+
       color: var(--muted);
+
       font-size: 0.96rem;
     }
 
-    /* What we review */
+    /* =========================
+       DATA / EVIDENCE
+    ========================== */
+
     .review-grid {
       display: grid;
+
       grid-template-columns: 0.9fr 1.1fr;
+
       gap: 78px;
-      align-items: start;
     }
 
     .data-list {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      overflow: hidden;
+
       background: white;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
+      overflow: hidden;
     }
 
     .data-item {
       min-height: 118px;
+
       padding: 24px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .data-item:nth-child(2n) {
@@ -475,71 +566,92 @@
 
     .data-item strong {
       display: block;
+
       margin-bottom: 5px;
     }
 
     .data-item span {
       color: var(--muted);
+
       font-size: 0.92rem;
     }
 
-    /* Offer */
+    /* =========================
+       OFFER
+    ========================== */
+
     .offer {
       padding: 40px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+
       background: white;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
       box-shadow: var(--shadow);
     }
 
     .offer-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 50px;
-      align-items: center;
-    }
 
-    .offer p:last-child {
-      margin-bottom: 0;
+      grid-template-columns: 1.25fr 0.75fr;
+
+      gap: 50px;
+
+      align-items: center;
     }
 
     .offer-points {
       display: grid;
-      gap: 12px;
     }
 
     .offer-point {
       padding: 14px 0;
-      border-bottom: 1px solid var(--line);
+
       font-weight: 700;
+
+      border-bottom: 1px solid var(--border);
     }
 
     .offer-point:last-child {
       border-bottom: 0;
     }
 
-    /* Portfolio */
+    /* =========================
+       PORTFOLIO
+    ========================== */
+
     .portfolio-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 68px;
+
       align-items: center;
     }
 
     .ranking-card {
       padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      background: var(--soft);
+
+      background: var(--cream);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
     }
 
     .ranking-row {
       display: grid;
+
       grid-template-columns: 42px 1fr auto;
+
       gap: 14px;
+
       align-items: center;
+
       padding: 15px 0;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom: 1px solid var(--border);
     }
 
     .ranking-row:last-child {
@@ -547,13 +659,17 @@
     }
 
     .rank {
-      display: grid;
       width: 34px;
       height: 34px;
+
+      display: grid;
       place-items: center;
-      border-radius: 50%;
+
       color: white;
-      background: var(--brand);
+      background: var(--green);
+
+      border-radius: 50%;
+
       font-size: 0.85rem;
       font-weight: 800;
     }
@@ -563,21 +679,47 @@
     }
 
     .signal {
-      color: var(--success);
+      color: var(--green);
+
       font-size: 0.85rem;
       font-weight: 800;
     }
 
-    /* Deadline */
+    /* =========================
+       DEADLINE
+    ========================== */
+
     .deadline {
+      position: relative;
+
       display: grid;
+
       grid-template-columns: 0.72fr 1.28fr;
+
       gap: 70px;
-      align-items: start;
+
       padding: 42px;
-      border-radius: var(--r-lg);
+
       color: white;
-      background: var(--brand-dark);
+      background: var(--green-dark);
+
+      border-radius: var(--radius-lg);
+
+      overflow: hidden;
+    }
+
+    .deadline::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background: var(--gold);
     }
 
     .deadline h2,
@@ -586,11 +728,11 @@
     }
 
     .deadline .eyebrow {
-      opacity: 0.74;
+      opacity: 0.75;
     }
 
     .deadline-copy {
-      color: rgba(255, 255, 255, 0.82);
+      color: rgba(255, 255, 255, 0.83);
     }
 
     .deadline-copy p:last-child {
@@ -598,47 +740,67 @@
     }
 
     .deadline a {
-      text-decoration-thickness: 1px;
+      font-weight: 700;
+
       text-underline-offset: 3px;
     }
 
-    /* Form */
+    /* =========================
+       CONTACT
+    ========================== */
+
     .contact-grid {
       display: grid;
+
       grid-template-columns: 0.78fr 1.22fr;
+
       gap: 76px;
-      align-items: start;
     }
 
     .contact-details {
-      margin-top: 32px;
       display: grid;
+
       gap: 10px;
+
+      margin-top: 32px;
+
       color: var(--muted);
+
       font-size: 0.95rem;
     }
 
     .contact-details a {
-      color: var(--brand);
+      color: var(--green);
+
       font-weight: 700;
     }
 
+    /* =========================
+       FORM
+    ========================== */
+
     .form-card {
       padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+
       background: white;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
       box-shadow: var(--shadow);
     }
 
     .form-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 18px;
     }
 
     .field {
       display: grid;
+
       gap: 7px;
     }
 
@@ -654,11 +816,14 @@
     input,
     textarea {
       width: 100%;
-      border: 1px solid #cbd5d1;
-      border-radius: var(--r-sm);
-      color: var(--ink);
-      background: white;
+
       padding: 13px 14px;
+
+      color: var(--text);
+      background: white;
+
+      border: 1px solid #CBD5D1;
+      border-radius: var(--radius-sm);
     }
 
     input {
@@ -667,65 +832,81 @@
 
     textarea {
       min-height: 110px;
-      resize: vertical;
-    }
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #87928e;
+      resize: vertical;
     }
 
     input:focus,
     textarea:focus {
       outline: none;
-      border-color: var(--brand);
-      box-shadow: 0 0 0 3px rgba(15, 59, 70, 0.12);
-    }
 
-    .form-note {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
+      border-color: var(--green);
+
+      box-shadow: 0 0 0 3px rgba(30, 58, 52, 0.12);
     }
 
     .form-submit {
       width: 100%;
+
       margin-top: 20px;
     }
 
-    /* Footer */
+    .form-note {
+      margin: 16px 0 0;
+
+      color: var(--muted);
+
+      font-size: 0.82rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
       padding: 42px 0;
-      border-top: 1px solid var(--line);
-      background: var(--soft);
+
+      background: var(--cream);
+
+      border-top: 1px solid var(--border);
     }
 
     .footer-grid {
       display: flex;
-      justify-content: space-between;
-      gap: 30px;
+
       align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 30px;
     }
 
-    .footer-brand {
-      margin-bottom: 7px;
-      font-weight: 850;
-      letter-spacing: 0.06em;
+    .footer-logo {
+      width: auto;
+      height: 36px;
+      max-width: 210px;
+
+      margin-bottom: 10px;
     }
 
     .footer-copy,
     .footer-legal {
       margin: 0;
+
       color: var(--muted);
+
       font-size: 0.85rem;
     }
 
     .footer-legal {
       max-width: 520px;
+
       text-align: right;
     }
 
-    /* Mobile */
+    /* =========================
+       TABLET
+    ========================== */
+
     @media (max-width: 950px) {
       .hero-grid,
       .problem-grid,
@@ -737,19 +918,7 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-grid {
-        gap: 44px;
-      }
-
-      .proof-panel {
-        max-width: 560px;
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 38px;
-      }
-
+      .hero-grid,
       .problem-grid,
       .review-grid,
       .portfolio-grid,
@@ -757,39 +926,48 @@
         gap: 48px;
       }
 
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .deadline {
         gap: 16px;
       }
     }
+
+    /* =========================
+       MOBILE
+    ========================== */
 
     @media (max-width: 720px) {
       .nav-link {
         display: none;
       }
 
-      .brand-tag {
-        display: none;
+      .site-logo {
+        height: 36px;
+        max-width: 210px;
       }
 
       .hero {
         padding: 72px 0 64px;
       }
 
-      section.section {
+      .section {
         padding: 72px 0;
       }
 
       .trust-items {
         grid-template-columns: 1fr;
+
         padding: 8px 0;
       }
 
-      .trust-item,
-      .trust-item:first-child,
-      .trust-item:last-child {
+      .trust-item {
         padding: 11px 0;
+
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--border);
       }
 
       .trust-item:last-child {
@@ -808,7 +986,7 @@
       .data-item:nth-child(2n),
       .data-item:nth-last-child(-n + 2) {
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--border);
       }
 
       .data-item:last-child {
@@ -851,8 +1029,10 @@
 
       .nav .button {
         min-height: 42px;
+
         padding: 9px 13px;
-        font-size: 0.86rem;
+
+        font-size: 0.85rem;
       }
 
       .offer,
@@ -876,339 +1056,703 @@
       }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Rollstead LLC",
-    "url": "https://www.rollstead.ai/",
-    "email": "info@rollstead.ai",
-    "telephone": "+1-612-296-8400",
-    "description": "Commercial property assessment intelligence for Minnesota property owners.",
-    "areaServed": {
-      "@type": "State",
-      "name": "Minnesota"
-    }
-  }
-  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
+
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Rollstead home">
-        <span class="brand-name">ROLLSTEAD</span>
-        <span class="brand-tag">Property Intelligence</span>
+
+      <a
+        class="brand"
+        href="/"
+        aria-label="Rollstead home"
+      >
+        <img
+          src="assets/rollstead-logo.svg"
+          alt="Rollstead"
+          class="site-logo"
+        />
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a class="nav-link" href="#how-it-works">How it works</a>
-        <a class="nav-link" href="#portfolio">For portfolios</a>
-        <a class="nav-link" href="#deadline">Deadlines</a>
-        <a class="button button-primary" href="#assessment">
+      <nav
+        class="nav-links"
+        aria-label="Primary navigation"
+      >
+
+        <a
+          class="nav-link"
+          href="#how-it-works"
+        >
+          How it works
+        </a>
+
+        <a
+          class="nav-link"
+          href="#portfolio"
+        >
+          For portfolios
+        </a>
+
+        <a
+          class="nav-link"
+          href="#deadline"
+        >
+          Deadlines
+        </a>
+
+        <a
+          class="button button-primary"
+          href="#assessment"
+        >
           Check My Property
         </a>
+
       </nav>
+
     </div>
+
   </header>
 
+
   <main id="main">
-    <!-- HERO -->
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero">
+
       <div class="container hero-grid">
+
         <div class="hero-copy">
-          <p class="eyebrow">Commercial Property Assessment Intelligence</p>
+
+          <p class="eyebrow">
+            Commercial Property Assessment Intelligence
+          </p>
 
           <h1>
             Find out if your commercial property is overassessed.
           </h1>
 
           <p class="large-copy">
-            Rollstead analyzes public assessment data and comparable commercial
-            properties to identify potential overassessment. Start with a free
-            Assessment Check. If the numbers do not support a case, we will tell you.
+            Rollstead analyzes public assessment data and comparable
+            commercial properties to identify potential overassessment.
+            Start with a free Assessment Check. If the numbers do not
+            support a case, we will tell you.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#assessment">
+
+            <a
+              class="button button-primary"
+              href="#assessment"
+            >
               Get My Free Assessment Check
             </a>
 
-            <a class="button button-secondary" href="#how-it-works">
+            <a
+              class="button button-secondary"
+              href="#how-it-works"
+            >
               See How It Works
             </a>
+
           </div>
 
           <p class="hero-note">
             Free initial review. No obligation. Minnesota commercial properties.
           </p>
+
         </div>
 
-        <aside class="proof-panel" aria-label="What you receive">
-          <p class="proof-label">What you receive</p>
-          <p class="proof-value">A clear answer from the data.</p>
+
+        <aside
+          class="proof-panel"
+          aria-label="What you receive"
+        >
+
+          <p class="proof-label">
+            What you receive
+          </p>
+
+          <p class="proof-value">
+            A clear answer from the data.
+          </p>
+
           <p class="muted">
-            We review the property's assessed value, relevant public records and
-            comparable properties, then tell you whether the evidence suggests the
+            We review the property's assessed value,
+            relevant public records and comparable properties,
+            then tell you whether the evidence suggests the
             assessment deserves a closer look.
           </p>
+
         </aside>
+
       </div>
+
     </section>
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip" aria-label="Rollstead service principles">
+
+    <!-- =========================
+         TRUST STRIP
+    ========================== -->
+
+    <div class="trust-strip">
+
       <div class="container trust-items">
-        <div class="trust-item">Evidence-first analysis</div>
-        <div class="trust-item">Free initial Assessment Check</div>
-        <div class="trust-item">No savings, no success fee</div>
+
+        <div class="trust-item">
+          Evidence-first analysis
+        </div>
+
+        <div class="trust-item">
+          Free initial Assessment Check
+        </div>
+
+        <div class="trust-item">
+          No savings, no success fee
+        </div>
+
       </div>
+
     </div>
 
-    <!-- PROBLEM -->
+
+    <!-- =========================
+         PROBLEM
+    ========================== -->
+
     <section class="section">
+
       <div class="container problem-grid">
-        <div>
-          <p class="eyebrow">The Problem</p>
-          <h2>Your assessment is an estimate. It is worth checking.</h2>
-        </div>
 
         <div>
-          <p class="problem-copy">
-            Commercial property owners receive an assessed value each year, but many
-            never independently test whether that value is well supported. When an
-            assessment is too high, the tax impact can continue until the value is
-            corrected.
+
+          <p class="eyebrow">
+            The Problem
           </p>
+
+          <h2>
+            Your assessment is an estimate.
+            It is worth checking.
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <p class="problem-copy">
+            Commercial property owners receive an assessed value each
+            year, but many never independently test whether that value
+            is well supported. When an assessment is too high, the tax
+            impact can continue until the value is corrected.
+          </p>
+
 
           <div class="principles">
-            <div class="principle">
-              <h3>Most owners do not have time to build the comparison themselves.</h3>
-              <p>
-                Public records exist, but turning them into a useful property-by-property
-                analysis takes time and context.
-              </p>
-            </div>
 
             <div class="principle">
-              <h3>A high tax bill does not automatically mean a bad assessment.</h3>
+
+              <h3>
+                Most owners do not have time to build the comparison themselves.
+              </h3>
+
               <p>
-                We look for evidence. If the data does not support an appeal, that is a
-                useful answer too.
+                Public records exist, but turning them into a useful
+                property-by-property analysis takes time and context.
               </p>
+
             </div>
 
+
             <div class="principle">
-              <h3>The goal is a better decision, not a predetermined conclusion.</h3>
+
+              <h3>
+                A high tax bill does not automatically mean a bad assessment.
+              </h3>
+
               <p>
-                Rollstead is designed to help owners focus attention where the numbers
-                indicate a meaningful opportunity may exist.
+                We look for evidence. If the data does not support an
+                appeal, that is a useful answer too.
               </p>
+
             </div>
+
+
+            <div class="principle">
+
+              <h3>
+                The goal is a better decision, not a predetermined conclusion.
+              </h3>
+
+              <p>
+                Rollstead is designed to help owners focus attention
+                where the numbers indicate a meaningful opportunity
+                may exist.
+              </p>
+
+            </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works" class="section section-soft">
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+    <section
+      id="how-it-works"
+      class="section section-soft"
+    >
+
       <div class="container">
+
         <div class="section-heading">
-          <p class="eyebrow">How It Works</p>
-          <h2>Start with one address.</h2>
-          <p class="large-copy">
-            You do not need to research comparable properties or prepare an appeal
-            package before talking with us.
+
+          <p class="eyebrow">
+            How It Works
           </p>
+
+          <h2>
+            Start with one address.
+          </h2>
+
+          <p class="large-copy">
+            You do not need to research comparable properties or
+            prepare an appeal package before talking with us.
+          </p>
+
         </div>
 
+
         <div class="steps">
-          <article class="step">
-            <div class="step-number">01</div>
-            <h3>Send the property address</h3>
-            <p>
-              Give us the commercial property you want reviewed. Basic contact
-              information and the address are enough to start.
-            </p>
-          </article>
 
           <article class="step">
-            <div class="step-number">02</div>
-            <h3>We run the Assessment Check</h3>
+
+            <div class="step-number">
+              01
+            </div>
+
+            <h3>
+              Send the property address
+            </h3>
+
+            <p>
+              Give us the commercial property you want reviewed.
+              Basic contact information and the address are enough
+              to start.
+            </p>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <h3>
+              We run the Assessment Check
+            </h3>
+
             <p>
               We review public assessment records, property characteristics,
               assessment history and relevant comparable-property data.
             </p>
+
           </article>
 
-          <article class="step">
-            <div class="step-number">03</div>
-            <h3>You get a clear finding</h3>
-            <p>
-              We explain whether the available evidence suggests the property may be
-              overassessed and whether deeper review appears worthwhile.
-            </p>
-          </article>
 
           <article class="step">
-            <div class="step-number">04</div>
-            <h3>If warranted, move forward</h3>
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              You get a clear finding
+            </h3>
+
             <p>
-              If you choose to proceed, we help assemble the supporting analysis and
-              coordinate the next steps in the appeal process.
+              We explain whether the available evidence suggests the
+              property may be overassessed and whether deeper review
+              appears worthwhile.
             </p>
+
           </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              04
+            </div>
+
+            <h3>
+              If warranted, move forward
+            </h3>
+
+            <p>
+              If you choose to proceed, we help assemble the supporting
+              analysis and coordinate the next steps in the appeal process.
+            </p>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- WHAT WE REVIEW -->
+
+    <!-- =========================
+         EVIDENCE
+    ========================== -->
+
     <section class="section">
+
       <div class="container review-grid">
+
         <div>
-          <p class="eyebrow">Evidence First</p>
-          <h2>We look beyond the tax bill.</h2>
-          <p class="large-copy">
-            The question is not simply whether taxes feel high. The question is whether
-            the assessed value is supported by the available evidence.
+
+          <p class="eyebrow">
+            Evidence First
           </p>
-        </div>
 
-        <div class="data-list" aria-label="Data reviewed">
-          <div class="data-item">
-            <strong>Assessed market value</strong>
-            <span>Current public assessment and classification information.</span>
-          </div>
+          <h2>
+            We look beyond the tax bill.
+          </h2>
 
-          <div class="data-item">
-            <strong>Assessment history</strong>
-            <span>How the property's assessed value has changed over time.</span>
-          </div>
-
-          <div class="data-item">
-            <strong>Property characteristics</strong>
-            <span>Size, use, class and other relevant physical attributes.</span>
-          </div>
-
-          <div class="data-item">
-            <strong>Comparable properties</strong>
-            <span>Relevant peer properties and market-value relationships.</span>
-          </div>
-
-          <div class="data-item">
-            <strong>Value per square foot</strong>
-            <span>A useful comparison point when appropriate for the property type.</span>
-          </div>
-
-          <div class="data-item">
-            <strong>Potential financial impact</strong>
-            <span>An estimate of what a supported value change could mean in dollars.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OFFER -->
-    <section class="section section-soft">
-      <div class="container">
-        <div class="offer">
-          <div class="offer-grid">
-            <div>
-              <p class="eyebrow">Aligned Incentives</p>
-              <h2>No savings, no success fee.</h2>
-              <p class="large-copy">
-                The initial Assessment Check is free. If the analysis supports moving
-                forward and you choose to engage Rollstead, our success fee is tied to
-                documented tax savings. If the property taxes are not reduced, you do
-                not pay a success fee.
-              </p>
-              <p class="muted">
-                Any engagement terms and fees are explained in writing before appeal
-                work begins.
-              </p>
-            </div>
-
-            <div class="offer-points" aria-label="Offer details">
-              <div class="offer-point">Free initial Assessment Check</div>
-              <div class="offer-point">No upfront success fee</div>
-              <div class="offer-point">Engagement terms disclosed in advance</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section">
-      <div class="container portfolio-grid">
-        <div>
-          <p class="eyebrow">Own More Than One Property?</p>
-          <h2>Find the few properties worth your attention first.</h2>
           <p class="large-copy">
-            Send us your property list and Rollstead can rank the portfolio by the
-            strength of the available overassessment signals. Instead of reviewing every
-            property equally, you can focus first on the properties where the data
+            The question is not simply whether taxes feel high.
+            The question is whether the assessed value is supported
+            by the available evidence.
+          </p>
+
+        </div>
+
+
+        <div class="data-list">
+
+          <div class="data-item">
+
+            <strong>
+              Assessed market value
+            </strong>
+
+            <span>
+              Current public assessment and classification information.
+            </span>
+
+          </div>
+
+
+          <div class="data-item">
+
+            <strong>
+              Assessment history
+            </strong>
+
+            <span>
+              How the property's assessed value has changed over time.
+            </span>
+
+          </div>
+
+
+          <div class="data-item">
+
+            <strong>
+              Property characteristics
+            </strong>
+
+            <span>
+              Size, use, class and other relevant physical attributes.
+            </span>
+
+          </div>
+
+
+          <div class="data-item">
+
+            <strong>
+              Comparable properties
+            </strong>
+
+            <span>
+              Relevant peer properties and market-value relationships.
+            </span>
+
+          </div>
+
+
+          <div class="data-item">
+
+            <strong>
+              Value per square foot
+            </strong>
+
+            <span>
+              A useful comparison point when appropriate for the property type.
+            </span>
+
+          </div>
+
+
+          <div class="data-item">
+
+            <strong>
+              Potential financial impact
+            </strong>
+
+            <span>
+              An estimate of what a supported value change could mean in dollars.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         OFFER
+    ========================== -->
+
+    <section class="section section-soft">
+
+      <div class="container">
+
+        <div class="offer">
+
+          <div class="offer-grid">
+
+            <div>
+
+              <p class="eyebrow">
+                Aligned Incentives
+              </p>
+
+              <h2>
+                No savings, no success fee.
+              </h2>
+
+              <p class="large-copy">
+                The initial Assessment Check is free. If the analysis
+                supports moving forward and you choose to engage Rollstead,
+                our success fee is tied to documented tax savings.
+                If the property taxes are not reduced, you do not pay
+                a success fee.
+              </p>
+
+              <p class="muted">
+                Any engagement terms and fees are explained in writing
+                before appeal work begins.
+              </p>
+
+            </div>
+
+
+            <div class="offer-points">
+
+              <div class="offer-point">
+                Free initial Assessment Check
+              </div>
+
+              <div class="offer-point">
+                No upfront success fee
+              </div>
+
+              <div class="offer-point">
+                Engagement terms disclosed in advance
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <section
+      id="portfolio"
+      class="section"
+    >
+
+      <div class="container portfolio-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            Own More Than One Property?
+          </p>
+
+          <h2>
+            Find the few properties worth your attention first.
+          </h2>
+
+          <p class="large-copy">
+            Send us your property list and Rollstead can rank the
+            portfolio by the strength of the available overassessment
+            signals. Instead of reviewing every property equally,
+            you can focus first on the properties where the data
             suggests the largest potential opportunity.
           </p>
 
-          <a class="button button-secondary" href="#assessment">
+          <a
+            class="button button-secondary"
+            href="#assessment"
+          >
             Request a Portfolio Review
           </a>
+
         </div>
 
-        <div class="ranking-card" aria-label="Illustrative portfolio ranking">
-          <p class="proof-label">Illustrative workflow</p>
+
+        <div class="ranking-card">
+
+          <p class="proof-label">
+            Illustrative workflow
+          </p>
+
 
           <div class="ranking-row">
-            <span class="rank">1</span>
-            <span class="rank-property">Property A</span>
-            <span class="signal">Review first</span>
+
+            <span class="rank">
+              1
+            </span>
+
+            <span class="rank-property">
+              Property A
+            </span>
+
+            <span class="signal">
+              Review first
+            </span>
+
           </div>
 
-          <div class="ranking-row">
-            <span class="rank">2</span>
-            <span class="rank-property">Property B</span>
-            <span class="signal">Review next</span>
-          </div>
 
           <div class="ranking-row">
-            <span class="rank">3</span>
-            <span class="rank-property">Property C</span>
-            <span class="muted">Lower signal</span>
+
+            <span class="rank">
+              2
+            </span>
+
+            <span class="rank-property">
+              Property B
+            </span>
+
+            <span class="signal">
+              Review next
+            </span>
+
           </div>
+
+
+          <div class="ranking-row">
+
+            <span class="rank">
+              3
+            </span>
+
+            <span class="rank-property">
+              Property C
+            </span>
+
+            <span class="muted">
+              Lower signal
+            </span>
+
+          </div>
+
 
           <p class="form-note">
-            Illustration only. Rankings are based on the evidence available for each
-            property and are not guarantees of appeal outcomes.
+            Illustration only. Rankings are based on the evidence
+            available for each property and are not guarantees of
+            appeal outcomes.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- DEADLINE -->
-    <section id="deadline" class="section">
+
+    <!-- =========================
+         DEADLINES
+    ========================== -->
+
+    <section
+      id="deadline"
+      class="section"
+    >
+
       <div class="container">
+
         <div class="deadline">
+
           <div>
-            <p class="eyebrow">Minnesota Deadlines</p>
-            <h2>Do not wait until the last minute.</h2>
+
+            <p class="eyebrow">
+              Minnesota Deadlines
+            </p>
+
+            <h2>
+              Do not wait until the last minute.
+            </h2>
+
           </div>
 
+
           <div class="deadline-copy">
+
             <p>
-              Minnesota property-assessment appeal deadlines depend on the route you
-              use and the jurisdiction. Local and county review dates can occur earlier
-              and vary by location.
+              Minnesota property-assessment appeal deadlines depend
+              on the route you use and the jurisdiction. Local and
+              county review dates can occur earlier and vary by location.
             </p>
 
             <p>
-              For Minnesota Tax Court, property-tax petitions are generally due by
-              <strong>April 30 of the year the taxes are payable</strong>. Confirm the
-              exact deadline shown on your valuation notice and the requirements that
-              apply to your property.
+              For Minnesota Tax Court, property-tax petitions are
+              generally due by
+              <strong>
+                April 30 of the year the taxes are payable
+              </strong>.
+              Confirm the exact deadline shown on your valuation notice
+              and the requirements that apply to your property.
             </p>
 
             <p>
@@ -1220,51 +1764,91 @@
                 Minnesota Department of Revenue guidance
               </a>
             </p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- CTA + FORM -->
-    <section id="assessment" class="section section-soft">
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+      id="assessment"
+      class="section section-soft"
+    >
+
       <div class="container contact-grid">
+
         <div>
-          <p class="eyebrow">Free Assessment Check</p>
-          <h2>Start with the property address.</h2>
-          <p class="large-copy">
-            We will review the available data and tell you whether the assessment
-            appears to deserve a closer look.
+
+          <p class="eyebrow">
+            Free Assessment Check
           </p>
 
+          <h2>
+            Start with the property address.
+          </h2>
+
+          <p class="large-copy">
+            We will review the available data and tell you whether
+            the assessment appears to deserve a closer look.
+          </p>
+
+
           <div class="contact-details">
+
             <span>
               Prefer to talk?
-              <a href="tel:+16122968400">612.296.8400</a>
+              <a href="tel:+16122968400">
+                612.296.8400
+              </a>
             </span>
 
             <span>
               Email:
-              <a href="mailto:info@rollstead.ai">info@rollstead.ai</a>
+              <a href="mailto:info@rollstead.ai">
+                info@rollstead.ai
+              </a>
             </span>
+
           </div>
+
         </div>
+
 
         <!--
           IMPORTANT:
-          GitHub Pages is static and does not process forms itself.
 
-          Option A: Replace REPLACE_WITH_YOUR_FORM_ID below with your Formspree form ID.
-          Option B: If your existing Rollstead site already has a working form endpoint,
-                    replace the action URL with that endpoint.
+          GitHub Pages cannot process forms by itself.
+
+          Replace REPLACE_WITH_YOUR_FORM_ID below
+          with your Formspree form ID.
+
+          Example:
+          https://formspree.io/f/abcxyz
         -->
+
         <form
           class="form-card"
           action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
           method="POST"
         >
+
           <div class="form-grid">
+
+
             <div class="field">
-              <label for="name">Name</label>
+
+              <label for="name">
+                Name
+              </label>
+
               <input
                 id="name"
                 name="name"
@@ -1272,20 +1856,35 @@
                 autocomplete="name"
                 required
               />
+
             </div>
 
+
             <div class="field">
-              <label for="company">Company <span class="muted">(optional)</span></label>
+
+              <label for="company">
+                Company
+                <span class="muted">
+                  (optional)
+                </span>
+              </label>
+
               <input
                 id="company"
                 name="company"
                 type="text"
                 autocomplete="organization"
               />
+
             </div>
 
+
             <div class="field">
-              <label for="email">Business email</label>
+
+              <label for="email">
+                Business email
+              </label>
+
               <input
                 id="email"
                 name="email"
@@ -1293,20 +1892,35 @@
                 autocomplete="email"
                 required
               />
+
             </div>
 
+
             <div class="field">
-              <label for="phone">Phone <span class="muted">(optional)</span></label>
+
+              <label for="phone">
+                Phone
+                <span class="muted">
+                  (optional)
+                </span>
+              </label>
+
               <input
                 id="phone"
                 name="phone"
                 type="tel"
                 autocomplete="tel"
               />
+
             </div>
 
+
             <div class="field full">
-              <label for="property-address">Property address</label>
+
+              <label for="property-address">
+                Property address
+              </label>
+
               <input
                 id="property-address"
                 name="property_address"
@@ -1315,20 +1929,30 @@
                 placeholder="Street address, city, MN"
                 required
               />
+
             </div>
 
+
             <div class="field full">
+
               <label for="notes">
                 Anything we should know?
-                <span class="muted">(optional)</span>
+                <span class="muted">
+                  (optional)
+                </span>
               </label>
+
               <textarea
                 id="notes"
                 name="notes"
                 placeholder="For example: property type, parcel number, or whether you own multiple properties."
               ></textarea>
+
             </div>
+
+
           </div>
+
 
           <input
             type="hidden"
@@ -1336,43 +1960,75 @@
             value="New Rollstead Assessment Check Request"
           />
 
-          <button class="button button-primary form-submit" type="submit">
+
+          <button
+            class="button button-primary form-submit"
+            type="submit"
+          >
             Get My Free Assessment Check
           </button>
 
+
           <p class="form-note">
-            By submitting this form, you are requesting an initial property review.
-            Submitting the form does not create an engagement or guarantee an appeal
-            result.
+            By submitting this form, you are requesting an initial
+            property review. Submitting the form does not create
+            an engagement or guarantee an appeal result.
           </p>
+
         </form>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+
     <div class="container footer-grid">
+
       <div>
-        <div class="footer-brand">ROLLSTEAD</div>
+
+        <img
+          src="assets/rollstead-logo.svg"
+          alt="Rollstead"
+          class="footer-logo"
+        />
+
         <p class="footer-copy">
           Commercial Property Assessment Intelligence
         </p>
+
         <p class="footer-copy">
-          © <span id="year"></span> Rollstead LLC · Minneapolis, Minnesota
+          © <span id="year"></span>
+          Rollstead LLC · Minneapolis, Minnesota
         </p>
+
       </div>
 
+
       <p class="footer-legal">
-        Rollstead provides property-assessment analysis and related services.
-        Estimates and analytical findings are not guarantees of value reductions,
-        tax savings or appeal outcomes. Property-specific facts, applicable law and
-        local procedures govern each matter.
+        Rollstead provides property-assessment analysis and related
+        services. Estimates and analytical findings are not guarantees
+        of value reductions, tax savings or appeal outcomes.
+        Property-specific facts, applicable law and local procedures
+        govern each matter.
       </p>
+
     </div>
+
   </footer>
 
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
