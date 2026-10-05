@@ -13,6 +13,21 @@
 
   <meta name="theme-color" content="#1E3A34" />
 
+  <link rel="canonical" href="https://www.rollstead.ai/" />
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E3A34'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' fill='%23D9A94F' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rollstead.ai/" />
+  <meta property="og:title" content="Rollstead | Is your commercial property overassessed?" />
+  <meta
+    property="og:description"
+    content="Free Assessment Check for Minnesota commercial property owners. Public data and comparable-property analysis. No savings, no success fee."
+  />
+
   <style>
     :root {
       --green: #1E3A34;
@@ -215,10 +230,21 @@
       text-decoration: none;
     }
 
-    .site-logo {
-      width: auto;
-      height: 44px;
-      max-width: 260px;
+    .wordmark {
+      display: inline-block;
+
+      color: var(--green);
+
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .footer-wordmark {
+      margin-bottom: 10px;
+
+      font-size: 1.3rem;
     }
 
     .nav-links {
@@ -880,14 +906,6 @@
       gap: 30px;
     }
 
-    .footer-logo {
-      width: auto;
-      height: 36px;
-      max-width: 210px;
-
-      margin-bottom: 10px;
-    }
-
     .footer-copy,
     .footer-legal {
       margin: 0;
@@ -944,9 +962,8 @@
         display: none;
       }
 
-      .site-logo {
-        height: 36px;
-        max-width: 210px;
+      .wordmark {
+        font-size: 1.35rem;
       }
 
       .hero {
@@ -1077,11 +1094,7 @@
         href="/"
         aria-label="Rollstead home"
       >
-        <img
-          src="assets/rollstead-logo.svg"
-          alt="Rollstead"
-          class="site-logo"
-        />
+        <span class="wordmark">Rollstead</span>
       </a>
 
       <nav
@@ -1994,11 +2007,9 @@
 
       <div>
 
-        <img
-          src="assets/rollstead-logo.svg"
-          alt="Rollstead"
-          class="footer-logo"
-        />
+        <p class="wordmark footer-wordmark">
+          Rollstead
+        </p>
 
         <p class="footer-copy">
           Commercial Property Assessment Intelligence
@@ -2028,6 +2039,38 @@
   <script>
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Until a Formspree form ID is set in the form action, send requests
+    // by email instead of posting to a placeholder URL that fails.
+    (function () {
+      var form = document.querySelector(".form-card");
+
+      if (!form || form.action.indexOf("REPLACE_WITH_YOUR_FORM_ID") === -1) {
+        return;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var fields = [
+          ["Name", "name"],
+          ["Company", "company"],
+          ["Email", "email"],
+          ["Phone", "phone"],
+          ["Property address", "property_address"],
+          ["Notes", "notes"]
+        ];
+
+        var body = fields.map(function (field) {
+          return field[0] + ": " + (form.elements[field[1]].value || "");
+        }).join("\n");
+
+        window.location.href =
+          "mailto:info@rollstead.ai" +
+          "?subject=" + encodeURIComponent("Assessment Check Request: " + form.elements.property_address.value) +
+          "&body=" + encodeURIComponent(body);
+      });
+    })();
   </script>
 
 </body>
