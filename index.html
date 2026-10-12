@@ -2047,10 +2047,12 @@
 
     // Until a Formspree form ID is set in the form action, send requests
     // by email instead of posting to a placeholder URL that fails.
+    // Checks for a real ID rather than the placeholder text, so a
+    // find-and-replace of the placeholder cannot also rewrite this check.
     (function () {
       var form = document.querySelector(".form-card");
 
-      if (!form || form.action.indexOf("REPLACE_WITH_YOUR_FORM_ID") === -1) {
+      if (!form || /^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(form.action)) {
         return;
       }
 
