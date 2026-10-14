@@ -20,6 +20,8 @@
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E3A34'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' fill='%23D9A94F' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E"
   />
 
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.rollstead.ai/" />
   <meta property="og:title" content="Rollstead | Is your commercial property overassessed?" />
@@ -880,6 +882,12 @@
       width: 100%;
 
       margin-top: 20px;
+    }
+
+    .form-note.form-status {
+      color: var(--text);
+
+      font-weight: 600;
     }
 
     .form-note {
@@ -2047,12 +2055,16 @@
 
     // Until a Formspree form ID is set in the form action, send requests
     // by email instead of posting to a placeholder URL that fails.
+    // Checks for a real ID rather than the placeholder text, so a
+    // find-and-replace of the placeholder cannot also rewrite this check.
     (function () {
       var form = document.querySelector(".form-card");
 
-      if (!form || form.action.indexOf("REPLACE_WITH_YOUR_FORM_ID") === -1) {
+      if (!form || /^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(form.action)) {
         return;
       }
+
+      var status = null;
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -2074,6 +2086,23 @@
           "mailto:info@rollstead.ai" +
           "?subject=" + encodeURIComponent("Assessment Check Request: " + form.elements.property_address.value) +
           "&body=" + encodeURIComponent(body);
+
+        // A mailto link fails silently when no email app is set up (or the
+        // message is too long for it), so always say what to do next.
+        if (!status) {
+          status = document.createElement("p");
+          status.className = "form-note form-status";
+          status.setAttribute("role", "status");
+          status.append(
+            "Your email app should open with your request filled in. Press send there to finish. If nothing opened, email ",
+            Object.assign(document.createElement("a"), {
+              href: "mailto:info@rollstead.ai",
+              textContent: "info@rollstead.ai"
+            }),
+            " with your property address."
+          );
+          form.querySelector(".form-submit").after(status);
+        }
       });
     })();
   </script>
