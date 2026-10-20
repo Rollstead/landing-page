@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>Email Signature | Rollstead</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 16px;
+
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #1B2536;
+      background: #F8F6F0;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+
+      font-size: 1.4rem;
+    }
+
+    .intro,
+    .steps {
+      color: #5A6474;
+      line-height: 1.6;
+    }
+
+    .preview {
+      margin: 24px 0 16px;
+      padding: 28px;
+
+      background: #FFFFFF;
+      border: 1px solid #E3E1D8;
+      border-radius: 14px;
+    }
+
+    .copy-button {
+      padding: 12px 20px;
+
+      color: #FFFFFF;
+      background: #1C2B45;
+      border: 0;
+      border-radius: 8px;
+
+      font: inherit;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .copy-status {
+      margin-left: 12px;
+
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <h1>Steve's email signature</h1>
+
+    <p class="intro">
+      Click the button, then paste into your Outlook signature settings.
+    </p>
+
+    <div class="preview">
+      <div id="signature"><table cellpadding="0" cellspacing="0" border="0" style="font-family:Aptos,Calibri,Helvetica,Arial,sans-serif;font-size:12pt;color:#000000;border-collapse:collapse;"><tr><td style="padding:0 0 12px 0;"><a href="https://www.rollstead.ai/" style="text-decoration:none;"><img src="https://www.rollstead.ai/assets/email-logo.png" width="220" height="58" alt="Rollstead · Commercial property tax intelligence" style="display:block;border:0;width:220px;height:58px;" /></a></td></tr><tr><td style="padding:0;line-height:1.4;"><b>Steve Morris</b><br />Founder | Rollstead, LLC<br />Commercial Property Tax Intelligence</td></tr><tr><td style="padding:12px 0 0 0;line-height:1.4;"><a href="tel:+16122968400" style="color:#000000;text-decoration:none;">612.296.8400</a><br /><a href="mailto:steve.morris@rollstead.ai" style="color:#1C2B45;">steve.morris@rollstead.ai</a><br /><a href="https://www.rollstead.ai/" style="color:#1C2B45;">www.rollstead.ai</a></td></tr><tr><td style="padding:12px 0 0 0;"><a href="https://bookings.cloud.microsoft/bookwithme/user/ec86ee53107641ca9eee695519bcc90b@rollstead.ai?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature" style="color:#1C2B45;">Book time to meet with me</a></td></tr></table></div>
+    </div>
+
+    <button class="copy-button" type="button" id="copy">Copy signature</button>
+    <span class="copy-status" id="status" role="status"></span>
+
+    <ol class="steps">
+      <li>Outlook on the web or new Outlook: Settings, then Account, then Signatures.</li>
+      <li>Select your existing signature, delete its contents, and paste (Ctrl+V).</li>
+      <li>Click Save. Send yourself a test email to check it.</li>
+    </ol>
+
+  </div>
+
+  <script>
+    document.getElementById("copy").addEventListener("click", function () {
+      var signature = document.getElementById("signature");
+      var status = document.getElementById("status");
+      var html = signature.innerHTML;
+      var text = signature.innerText;
+
+      function done() {
+        status.textContent = "Copied. Now paste it into Outlook.";
+      }
+
+      // Selecting and copying the rendered block keeps the formatting in every browser
+      function fallback() {
+        var range = document.createRange();
+        range.selectNodeContents(signature);
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        var ok = document.execCommand("copy");
+        selection.removeAllRanges();
+        status.textContent = ok
+          ? "Copied. Now paste it into Outlook."
+          : "Select the signature above and copy it (Ctrl+C).";
+      }
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([text], { type: "text/plain" })
+          })
+        ]).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+  </script>
+
+</body>
+</html>
