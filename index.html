@@ -11,14 +11,11 @@
     content="Rollstead helps Minnesota commercial property owners identify potential overassessment using public property data and comparable-property analysis."
   />
 
-  <meta name="theme-color" content="#1E3A34" />
+  <meta name="theme-color" content="#1C2B45" />
 
   <link rel="canonical" href="https://www.rollstead.ai/" />
 
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E3A34'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' fill='%23D9A94F' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E"
-  />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
@@ -37,12 +34,12 @@
 
   <style>
     :root {
-      --green: #1E3A34;
-      --green-dark: #142B27;
+      --primary: #1C2B45;
+      --primary-dark: #131E31;
       --gold: #D9A94F;
 
-      --text: #18312C;
-      --muted: #5B6B66;
+      --text: #1B2536;
+      --muted: #5A6474;
 
       --white: #FFFFFF;
       --cream: #F8F6F0;
@@ -55,7 +52,7 @@
       --radius-md: 14px;
       --radius-lg: 20px;
 
-      --shadow: 0 12px 34px rgba(24, 49, 44, 0.08);
+      --shadow: 0 12px 34px rgba(28, 43, 69, 0.08);
     }
 
     * {
@@ -153,7 +150,7 @@
     .eyebrow {
       margin: 0 0 16px;
 
-      color: var(--green);
+      color: var(--primary);
 
       font-size: 0.79rem;
       font-weight: 800;
@@ -189,7 +186,7 @@
       padding: 10px 14px;
 
       color: white;
-      background: var(--green);
+      background: var(--primary);
 
       border-radius: var(--radius-sm);
     }
@@ -199,7 +196,7 @@
     }
 
     :focus-visible {
-      outline: 3px solid rgba(30, 58, 52, 0.28);
+      outline: 3px solid rgba(28, 43, 69, 0.28);
       outline-offset: 3px;
     }
 
@@ -237,21 +234,20 @@
       text-decoration: none;
     }
 
-    .wordmark {
-      display: inline-block;
+    .site-logo {
+      display: block;
 
-      color: var(--green);
-
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1;
+      width: auto;
+      height: 40px;
     }
 
-    .footer-wordmark {
-      margin-bottom: 10px;
+    .footer-logo {
+      display: block;
 
-      font-size: 1.3rem;
+      width: 240px;
+      height: auto;
+
+      margin-bottom: 14px;
     }
 
     .nav-links {
@@ -310,11 +306,11 @@
 
     .button-primary {
       color: white;
-      background: var(--green);
+      background: var(--primary);
     }
 
     .button-primary:hover {
-      background: var(--green-dark);
+      background: var(--primary-dark);
     }
 
     .button-secondary {
@@ -539,7 +535,7 @@
     .step-number {
       margin-bottom: 12px;
 
-      color: var(--green);
+      color: var(--primary);
 
       font-size: 0.78rem;
       font-weight: 850;
@@ -699,7 +695,7 @@
       place-items: center;
 
       color: white;
-      background: var(--green);
+      background: var(--primary);
 
       border-radius: 50%;
 
@@ -712,7 +708,7 @@
     }
 
     .signal {
-      color: var(--green);
+      color: var(--primary);
 
       font-size: 0.85rem;
       font-weight: 800;
@@ -734,7 +730,7 @@
       padding: 42px;
 
       color: white;
-      background: var(--green-dark);
+      background: var(--primary-dark);
 
       border-radius: var(--radius-lg);
 
@@ -803,7 +799,7 @@
     }
 
     .contact-details a {
-      color: var(--green);
+      color: var(--primary);
 
       font-weight: 700;
     }
@@ -873,9 +869,9 @@
     textarea:focus {
       outline: none;
 
-      border-color: var(--green);
+      border-color: var(--primary);
 
-      box-shadow: 0 0 0 3px rgba(30, 58, 52, 0.12);
+      box-shadow: 0 0 0 3px rgba(28, 43, 69, 0.12);
     }
 
     .form-submit {
@@ -975,8 +971,8 @@
         display: none;
       }
 
-      .site-header .wordmark {
-        font-size: 1.35rem;
+      .site-logo {
+        height: 34px;
       }
 
       .hero {
@@ -1107,7 +1103,13 @@
         href="/"
         aria-label="Rollstead home"
       >
-        <span class="wordmark">Rollstead</span>
+        <img
+          src="assets/logo.png"
+          alt="Rollstead"
+          class="site-logo"
+          width="152"
+          height="40"
+        />
       </a>
 
       <nav
@@ -2018,13 +2020,13 @@
 
       <div>
 
-        <p class="wordmark footer-wordmark">
-          Rollstead
-        </p>
-
-        <p class="footer-copy">
-          Commercial Property Assessment Intelligence
-        </p>
+        <img
+          src="assets/logo-tagline.png"
+          alt="Rollstead: Commercial property tax intelligence"
+          class="footer-logo"
+          width="240"
+          height="71"
+        />
 
         <p class="footer-copy">
           © <span id="year"></span>
